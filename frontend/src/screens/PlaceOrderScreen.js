@@ -79,7 +79,7 @@ function PlaceOrderScreen() {
                         <Col md={1}>
                           <Image
                             src={`https://l-commerce-django-production.up.railway.app${item.image}`}
-                            alt={item.image}
+                            alt={item.name}
                             fluid
                             rounded
                             style={{ width: "50px", height: "50px" }}
