@@ -84,7 +84,7 @@ function OrderDetailsScreen() {
       },
     };
     const { data } = await axios.post(
-      `http://127.0.0.1:8000/api/orders/create-razorpay-order/${orderId}`,
+      `https://l-commerce-django-production.up.railway.app/api/orders/create-razorpay-order/${orderId}`,
       paymentobj,
       config
     );

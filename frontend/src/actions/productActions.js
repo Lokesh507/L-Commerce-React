@@ -25,7 +25,9 @@ import {
 export const listProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-    const { data } = await axios.get("http://127.0.0.1:8000/api/products/");
+    const { data } = await axios.get(
+      "https://l-commerce-django-production.up.railway.app/api/products/"
+    );
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -164,7 +166,7 @@ export const listCorouselProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_COROUSEL_REQUEST });
     const { data } = await axios.get(
-      "http://127.0.0.1:8000/api/products/corousel/"
+      "https://l-commerce-django-production.up.railway.app/api/products/corousel/"
     );
     dispatch({ type: PRODUCT_COROUSEL_SUCCESS, payload: data });
   } catch (error) {

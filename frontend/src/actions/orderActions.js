@@ -35,7 +35,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.post(
-      "http://127.0.0.1:8000/api/orders/add/",
+      "https://l-commerce-django-production.up.railway.app/api/orders/add/",
       order,
       config
     );
@@ -66,7 +66,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `http://127.0.0.1:8000/api/orders/${id}/`,
+      `https://l-commerce-django-production.up.railway.app/api/orders/${id}/`,
       config
     );
 
@@ -95,7 +95,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      `http://127.0.0.1:8000/api/orders/${id}/pay/`,
+      `https://l-commerce-django-production.up.railway.app/api/orders/${id}/pay/`,
       paymentResult,
       config
     );
@@ -124,7 +124,7 @@ export const myOrders = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "http://127.0.0.1:8000/api/orders/myorders",
+      "https://l-commerce-django-production.up.railway.app/api/orders/myorders",
       config
     );
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data });
@@ -152,7 +152,7 @@ export const allOrders = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "http://127.0.0.1:8000/api/orders/",
+      "https://l-commerce-django-production.up.railway.app/api/orders/",
       config
     );
     dispatch({ type: ALL_ORDERS_SUCCESS, payload: data });
@@ -180,7 +180,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      `http://127.0.0.1:8000/api/orders/${order._id}/delivered/`,
+      `https://l-commerce-django-production.up.railway.app/api/orders/${order._id}/delivered/`,
       config
     );
     dispatch({ type: ORDER_DELIVERY_SUCCESS, payload: data });
