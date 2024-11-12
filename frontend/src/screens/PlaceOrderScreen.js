@@ -78,7 +78,7 @@ function PlaceOrderScreen() {
                       <Row>
                         <Col md={1}>
                           <Image
-                            src={item.image}
+                            src={`https://l-commerce-django-production.up.railway.app${item.image}`}
                             alt={item.name}
                             fluid
                             rounded

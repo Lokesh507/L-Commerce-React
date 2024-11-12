@@ -50,7 +50,12 @@ function CartScreen() {
               <ListGroup.Item key={item.product}>
                 <Row className="cart-row">
                   <Col md={2} className="cart_product_image">
-                    <Image src={item.image} alt={item.name} fluid rounded />
+                    <Image
+                      src={`https://l-commerce-django-production.up.railway.app${item.image}`}
+                      alt={item.name}
+                      fluid
+                      rounded
+                    />
                   </Col>
 
                   <Col className="boxs text-center cart_product_name" md={4}>

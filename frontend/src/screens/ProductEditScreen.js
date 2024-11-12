@@ -43,7 +43,9 @@ function ProductEditScreen() {
           else {
             setName(product.name);
             setPrice(product.price);
-            setImage(product.image);
+            setImage(
+              `https://l-commerce-django-production.up.railway.app${product.image}`
+            );
             setDescription(product.description);
             setBrand(product.brand);
             setCategory(product.category);

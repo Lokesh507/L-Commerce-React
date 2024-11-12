@@ -78,7 +78,11 @@ function ProductScreen() {
           <div>
             <Row>
               <Col md={6}>
-                <Image src={product.image} alt={product.name} fluid />
+                <Image
+                  src={`https://l-commerce-django-production.up.railway.app${product.image}`}
+                  alt={product.name}
+                  fluid
+                />
               </Col>
               <Col md={3}>
                 <ListGroup variant="flush">
