@@ -145,7 +145,7 @@ function ProductEditScreen() {
                 type="text"
                 placeholder="Enter Brand"
                 value={brand}
-                onchange={(e) => setBrand(e.target.value)}
+                onChange={(e) => setBrand(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="stock">
