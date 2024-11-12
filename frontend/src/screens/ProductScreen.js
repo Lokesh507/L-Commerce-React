@@ -63,6 +63,7 @@ function ProductScreen() {
       })
     );
   };
+
   return (
     <>
       {loading ? (

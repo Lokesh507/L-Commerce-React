@@ -25,7 +25,11 @@ function ProductsCorousel() {
       {products.map((product) => (
         <Carousel.Item key={product._id}>
           <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
+            <Image
+              src={`https://l-commerce-django-production.up.railway.app${product.image}`}
+              alt={product.name}
+              fluid
+            />
             <Carousel.Caption className="carousel.caption">
               <h6 style={{ color: "white" }}>
                 {product.name} (Rs.{product.price})
