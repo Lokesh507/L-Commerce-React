@@ -35,7 +35,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "/api/users/login/",
+      "https://l-commerce-django-production.up.railway.app/api/users/login/",
       { username: email, password: password },
       config
     );
@@ -61,7 +61,7 @@ export const register = (name, email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "/api/users/register/",
+      "https://l-commerce-django-production.up.railway.app/api/users/register/",
       { name: name, email: email, password: password },
       config
     );
@@ -100,7 +100,10 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`/api/users/${id}/`, config);
+    const { data } = await axios.get(
+      `https://l-commerce-django-production.up.railway.app/api/users/${id}/`,
+      config
+    );
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -126,7 +129,7 @@ export const updateUserProfile = (userobj) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      `/api/users/profile/update/`,
+      `https://l-commerce-django-production.up.railway.app/api/users/profile/update/`,
       userobj,
       config
     );
@@ -156,7 +159,10 @@ export const allUsersList = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`/api/users/`, config);
+    const { data } = await axios.get(
+      `https://l-commerce-django-production.up.railway.app/api/users/`,
+      config
+    );
     dispatch({ type: ALL_USERS_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -181,7 +187,10 @@ export const deleteUserFromApp = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.delete(`/api/users/delete/${id}/`, config);
+    const { data } = await axios.delete(
+      `https://l-commerce-django-production.up.railway.app/api/users/delete/${id}/`,
+      config
+    );
     dispatch({ type: USER_PROFILE_DELETE_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -207,7 +216,7 @@ export const getUserDetailsByAdmin = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `/api/users/getUserByAdmin/${id}/`,
+      `https://l-commerce-django-production.up.railway.app/api/users/getUserByAdmin/${id}/`,
       config
     );
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
@@ -236,7 +245,7 @@ export const updateUserProfileByAdmin =
         },
       };
       const { data } = await axios.put(
-        `/api/users/updateUserByAdmin/${id}/`,
+        `https://l-commerce-django-production.up.railway.app/api/users/updateUserByAdmin/${id}/`,
         userobj,
         config
       );

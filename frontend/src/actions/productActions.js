@@ -43,7 +43,9 @@ export const listProducts = () => async (dispatch) => {
 export const listProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(
+      `https://l-commerce-django-production.up.railway.app/api/products/${id}`
+    );
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -68,7 +70,10 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.delete(`/api/products/delete/${id}/`, config);
+    const { data } = await axios.delete(
+      `https://l-commerce-django-production.up.railway.app/api/products/delete/${id}/`,
+      config
+    );
     dispatch({ type: PRODUCT_DELETE_SUCCESS });
   } catch (error) {
     dispatch({
@@ -92,7 +97,11 @@ export const createProduct = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.post(`/api/products/create/`, {}, config);
+    const { data } = await axios.post(
+      `https://l-commerce-django-production.up.railway.app/api/products/create/`,
+      {},
+      config
+    );
     dispatch({ type: CREATE_PRODUCT_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -117,7 +126,7 @@ export const updateProduct = (productobj) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      `/api/products/update/${productobj._id}/`,
+      `https://l-commerce-django-production.up.railway.app/api/products/update/${productobj._id}/`,
       productobj,
       config
     );
@@ -147,7 +156,7 @@ export const createproductReview =
         },
       };
       const { data } = await axios.post(
-        `/api/products/${productId}/reviews/`,
+        `https://l-commerce-django-production.up.railway.app/api/products/${productId}/reviews/`,
         review,
         config
       );
