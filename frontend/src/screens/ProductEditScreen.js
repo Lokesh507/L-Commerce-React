@@ -82,7 +82,7 @@ function ProductEditScreen() {
         },
       };
       const { data } = await axios.post(
-        "https://l-commerce-django-production.up.railway.app/api/products/uploadimage/",
+        "https://l-commerce-django-production.up.railway.app/api/products/uploadImage/",
         formdata,
         config
       );
